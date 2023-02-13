@@ -1,0 +1,2 @@
+#!/bin/bash
+rm grep '.js' 0x02-shell_directories
