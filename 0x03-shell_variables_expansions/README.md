@@ -1,1 +1,1 @@
-THIS IS A README OF VARIABLE EXPANSIONS
+This is for variable expansions
