@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This displays the content of the current directory
+# in a list
+
+cont=$(find -- * -maxdepth 1| cut -d'-' -f2- )
+
+for file in $cont
+do
+	echo "$file"
+done
