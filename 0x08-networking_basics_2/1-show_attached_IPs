@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ifconfig | grep "inet " | tr ":" " " | awk '{print $3}'
