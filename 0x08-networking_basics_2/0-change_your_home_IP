@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#configures an Ubuntu server to change IP address
 cp /etc/hosts ~/hosts.new
 sed -i "s/.*localhost$/127.0.0.2	localhost/g" ~/hosts.new
 sed -i "s/.*facebook.com//g" ~/hosts.new
