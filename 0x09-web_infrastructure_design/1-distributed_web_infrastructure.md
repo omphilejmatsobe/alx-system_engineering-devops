@@ -18,6 +18,4 @@ This is a distributed web infrastructure that attempts to reduce the traffic to 
 
 + There are multiple SPOF (Single Point Of Failure).<br/>For example, if the Primary MySQL database server is down, the entire site would be unable to make changes to the site (including adding or removing users). The server containing the load balancer and the application server connecting to the primary database server are also SPOFs.
   
-+ Security issues.<br/>The data transmitted over the network isn't encrypted using an SSL certificate so hackers can spy on the network. There is no way of blocking unauthorized IPs since there's no firewall installed on any server.
-  
-+ No monitoring.<br/>We have no way of knowing the status of each server since they're not being monitored.
++ There is little to no security.<br/>The information that travels in the network isn't encrypted through an SSL certificate. There are no firewalls so there is no of blocking unauthorized IPs since there's no firewall installed on any server. We also have no monitoring have therefore there is no way of knowing the status of each server.
