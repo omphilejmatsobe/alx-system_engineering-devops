@@ -6,7 +6,7 @@ This is a distributed web infrastructure that attempts to reduce the traffic to 
 
 ## Specifics About This Infrastructure
 
-+ The distribution algorithm the load balancer is configured with and how it works.<br/> The load balancer distributes network traffic across multiple servers. It uses an algorithm that works by using each server behind the load balancer in turns, according to their weights. The load balancer is configured with the *Round Robin* distribution algorithm.
++ The load balancer distributes network traffic across multiple servers.<br/> It uses an algorithm that works by using each server behind the load balancer in turns, according to their weights. The load balancer is configured with the *Round Robin* distribution algorithm. A client request is forwarded to each server in turn. The algorithm instructs the load balancer to go back to the top of the list and repeats again.
   
 + The setup enabled by the load-balancer.<br/>The HAProxy load-balancer is enabling an *Active-Passive* setup rather than an *Active-Active* setup. In an *Active-Active* setup, the load balancer distributes workloads across all nodes in order to prevent any single node from getting overloaded. Because there are more nodes available to serve, there will also be a marked improvement in throughput and response times. On the other hand, in an *Active-Passive* setup, not all nodes are going to be active (capable of receiving workloads at all times). In the case of two nodes, for example, if the first node is already active, the second node must be passive or on standby. The second or the next passive node can become an active node if the preceding node is inactive.
   
