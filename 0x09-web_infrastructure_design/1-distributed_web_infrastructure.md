@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a distributed web infrastructure that attempts to reduce the traffic to the primary server by distributing some of the load to a replica server with the aid of a server responsible for balancing the load between the two servers (primary and replica).
+This is a distributed web infrastructure that attempts to break up the internet so that no single entity has control over all the data on it.
 
 ## Specifics About This Infrastructure
 
