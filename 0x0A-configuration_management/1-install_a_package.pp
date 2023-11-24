@@ -1,5 +1,5 @@
-# Installing a package using puppet
+# Installing packages
 package { 'flask':
   ensure   => '2.1.0',
-  provider => 'python-pip3',
+  provider => 'pip3',
 }
