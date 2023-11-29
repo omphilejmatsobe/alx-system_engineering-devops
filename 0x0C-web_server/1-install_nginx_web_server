@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx
-apt-get -y upgrade
-apt-get -y install nginx
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
 sudo ufw allow 80
 sudo ufw --force enable
 sudo ufw status
