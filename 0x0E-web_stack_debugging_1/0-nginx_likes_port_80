@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #Auto-fix nginx to listen to port 80
-
 sudo apt-get update
 sudo apt-get -y install curl
 rm /etc/nginx/sites-available/*
