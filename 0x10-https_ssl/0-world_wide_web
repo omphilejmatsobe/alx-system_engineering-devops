@@ -1,21 +1,28 @@
 #!/usr/bin/env bash
-#Configure the domain zone so that the subdomain points to the load-balancer IP
+# Configure domain zone so that the subdomain www points to load-balancer IP
+_domain() {
+	# awk will use record seperator of space
+	SUBDOMAINS='www lb-01 web-01 web-02'
 
-displayFunc()
-{
-	printf "The subdomain %s is a " "$2"
-	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk -F' ' '{ printf $4 }'
-	printf " record and points to "
-	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk -F' ' '{ printf $5 }'
-	echo ""
+	if [ -z "$1" ]; then
+		exit
+	fi
+	# no sub domain specified, do all
+	if [ -z "$2" ]; then
+		echo "$SUBDOMAINS" | awk -v domain="$1"\
+		'BEGIN { RS=" " }
+		{split($0,ARR," ");
+		cmd = "dig " ARR[1]"."domain " | grep -A1 \"ANSWER SECTION:\" | tail -n1";
+		system(cmd)
+		close(cmd)}' | awk\
+		'{
+		split($0, DOMS, ".");
+		print "The subdomain " DOMS[1] " is a " $4 " record and points to " $5}'
+	else
+		dig "$2.$1" | grep -A1 "ANSWER SECTION:" | tail -n1 | awk\
+		'{
+		split($0, DOMS, ".");
+		print "The subdomain " DOMS[1] " is a " $4 " record and points to " $5}'
+	fi
 }
-
-if [ -z "$2" ]; then
-	for subs in "www" "lb-01" "web-01" "web-02"
-	do
-		displayFunc "$1" "$subs"
-	done
-else
-	displayFunc "$1" "$2"
-fi
-
+_domain "$1" "$2"
