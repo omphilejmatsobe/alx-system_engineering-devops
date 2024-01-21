@@ -24,8 +24,12 @@ address it, roughly 19:20 PST. He promptly proceeded to undergo solving the prob
    ```
    chmod 644 /etc/nginx/nginx.conf
    ```
-5. 
-
+5. Clean Up
+   ```
+   pkill apache2
+   sudo -u nginx service nginx restart
+   ```
+   
 ## Summation
 
 In short, a typo. Gotta love'em. In full, the WordPress app was encountering a critical
