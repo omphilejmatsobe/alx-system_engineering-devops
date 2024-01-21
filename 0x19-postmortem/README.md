@@ -13,9 +13,6 @@ Impact: The container was left vulnerable and an attack was performed. This resu
 
 Cause: Lack of security, the container was running as root and the login credentials were weak.
 
-##Timeline
-
-
 
 ## Debugging Process
 
