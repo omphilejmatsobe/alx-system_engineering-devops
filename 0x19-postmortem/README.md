@@ -6,8 +6,11 @@ and if maybe you fat finger a command and for example run rm -rf /, there is no 
 ## Summary
 
 Time-down: 12-19-2023, 16:22
+
 Duration: 2 hours
+
 Impact: The container was left vulnerable and an attack was performed. This resulted in the NGINX server being down.
+
 Cause: Lack of security, the container was running as root and the login credentials were weak.
 
 ##Timeline
