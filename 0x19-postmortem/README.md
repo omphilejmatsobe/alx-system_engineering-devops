@@ -53,5 +53,5 @@ moving forward, please keep the following in mind.
 * Shy away from running as the root user a lot unless if it's required.
 * Status monitoring. Enable some uptime-monitoring service such as
 
-Now that we know it will never occur again, because we're programmers, and we never make
+Now we know it will never occur again because we're programmers, and we never make
 mistakes right ?! :wink:
