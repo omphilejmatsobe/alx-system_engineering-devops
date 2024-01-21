@@ -3,7 +3,8 @@
 Containers have everything running under the root user by default,
 which has the ability to run anything as another user. Running containers as root is a bad idea for security,
 and if maybe you fat finger a command and for example run rm -rf /, there is no comeback. 
-## Summary
+
+## Summary && Timeline
 
 Time-down: 12-19-2023, 16:22
 
@@ -12,6 +13,12 @@ Duration: 2 hours
 Impact: The container was left vulnerable and an attack was performed. This resulted in the NGINX server being down.
 
 Cause: Lack of security, the container was running as root and the login credentials were weak.
+
+How was it detected?
+
+I ran some security tests on the container and realized how easy it was to escalate through, now since
+it was the root running I was able to play with it and disable some features. This shows how 
+important it is not to run the container as root.
 
 
 ## Debugging Process
